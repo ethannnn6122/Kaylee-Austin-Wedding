@@ -12,25 +12,25 @@ class HomeContainer extends Component {
                     <div className={classes.slideOne}>
                         <h1>Kaylee & Austin</h1>
                         <Link to="/rsvp">
-                            <Button className={classes.btn} size='large' type='text'>R S V P  Now</Button>
+                            <Button className={classes.btn} size='large' type='ghost'>RSVP Now</Button>
                         </Link>
                     </div>
                     <div className={classes.slideTwo}>
                         <h1>Kaylee & Austin</h1>
                         <Link to="/rsvp">
-                            <Button className={classes.btn} size='large' type='text'>R S V P  Now</Button>
+                            <Button className={classes.btn} size='large' type='ghost'>RSVP Now</Button>
                         </Link>
                     </div>
                     <div className={classes.slideThree}>
                         <h1>Kaylee & Austin</h1>
                         <Link to="/rsvp">
-                            <Button className={classes.btn} size='large' type='text'>R S V P  Now</Button>
+                            <Button className={classes.btn} size='large' type='ghost'>RSVP Now</Button>
                         </Link>
                     </div>
                     <div className={classes.slideFour}>
                         <h1>Kaylee & Austin</h1>
                         <Link to="/rsvp">
-                            <Button className={classes.btn} size='large' type='text'>R S V P  Now</Button>
+                            <Button className={classes.btn} size='large' type='ghost'>RSVP Now</Button>
                         </Link>
                     </div>
                 </Carousel>

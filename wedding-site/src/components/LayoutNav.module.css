@@ -1,13 +1,13 @@
 .trigger {
-  padding: 0 2rem 0 0;
-  font-size: 1.3rem;
-  line-height: 1rem; 
-  cursor: pointer;
-  transition: color 0.3s;
+    padding: 0 2rem 0 0;
+    font-size: 1.3rem;
+    line-height: 1rem; 
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
 .trigger:hover {
-  color: #7A0D17;
+    color: #7A0D17;
 }
 
 .navItems {
@@ -29,6 +29,18 @@
 }
 
 .siteLayoutBackground {
-  background: #FFDCDC;
-  padding-left: "1rem"
+    background: #FFDCDC;
+    padding-left: 1rem;
 }
+
+.countdown {
+    position: absolute;
+    right: 0;
+    padding:0 1.5rem 1.2rem 0;
+}
+
+@media only screen and (max-width: 580px) {
+    .trigger {
+        display: none;
+    }
+  }

@@ -5,3 +5,46 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #000054;
 }
+
+.ant-menu-item-selected,
+.ant-menu-item-selected a,
+.ant-menu-item-selected a:hover {
+  background-color: #FFDCDC !important;
+  color: #000054 !important;
+}
+
+.ant-menu-item a {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.ant-menu-item:hover,
+.ant-menu-item a:hover{
+  color: #000054 !important;
+}
+
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-item:after {
+  border-right: 3px solid #7A0D17 !important;
+}
+
+.ant-btn-ghost {
+  border-color: #000054 !important;
+  border-radius: 1rem;
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+}
+
+.ant-btn-ghost:hover {
+  border-color: #DECB85 !important;
+}
+
+.ant-statistic-content-value {
+  font-family: 'Josefin Sans', sans-serif !important; 
+  color: #000054 !important;
+}

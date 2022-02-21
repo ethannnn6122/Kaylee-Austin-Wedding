@@ -45,9 +45,17 @@
 .btn {
     color: #000054;
     font-size: 2rem;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .btn:hover {
     color: #DECB85;
     background-color: transparent;
 }
+
+@media only screen and (max-width: 580px) {
+    .slideOne, .slideTwo, .slideThree, .slideFour {
+        font-size: 2rem;
+    }
+   
+  }
