@@ -1,0 +1,34 @@
+.trigger {
+  padding: 0 2rem 0 0;
+  font-size: 1.3rem;
+  line-height: 1rem; 
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #7A0D17;
+}
+
+.navItems {
+    background: #7A0D17;
+    color: #FFDCDC;
+}
+
+.sider {
+    background: #7A0D17;
+    min-height: 100vh;
+}
+
+.logo {
+    color: #FFDCDC;
+    height: 32px;
+    margin: 16px;
+    font-family: 'Mea Culpa', cursive; 
+    font-size: 1.2rem;
+}
+
+.siteLayoutBackground {
+  background: #FFDCDC;
+  padding-left: "1rem"
+}

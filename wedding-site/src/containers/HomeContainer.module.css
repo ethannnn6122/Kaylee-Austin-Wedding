@@ -1,0 +1,53 @@
+.slideOne {
+    height: 100vh;
+    text-align: center;
+    line-height: 20rem;
+    font-size: 3rem;
+    font-family: 'Mea Culpa', cursive; 
+    background-image: url("https://picsum.photos/2000/3000");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slideTwo {
+    height: 100vh;
+    text-align: center;
+    line-height: 20rem;
+    font-size: 3rem;
+    font-family: 'Mea Culpa', cursive; 
+    background-image: url("https://picsum.photos/id/100/2000/3000");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slideThree {
+    height: 100vh;
+    text-align: center;
+    line-height: 20rem;
+    font-size: 3rem;
+    font-family: 'Mea Culpa', cursive; 
+    background-image: url("https://picsum.photos/id/104/2000/3000");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slideFour {
+    height: 100vh;
+    text-align: center;
+    line-height: 20rem;
+    font-size: 3rem;
+    font-family: 'Mea Culpa', cursive; 
+    background-image: url("https://picsum.photos/id/102/2000/3000");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn {
+    color: #000054;
+    font-size: 2rem;
+}
+
+.btn:hover {
+    color: #DECB85;
+    background-color: transparent;
+}
