@@ -1,0 +1,17 @@
+.navItems {
+    background: #7A0D17;
+    color: #FFDCDC;
+}
+
+.sider {
+    background: #7A0D17;
+    min-height: 100vh;
+}
+
+.logo {
+    color: #FFDCDC;
+    height: 32px;
+    margin: 16px;
+    font-family: 'Mea Culpa', cursive; 
+    font-size: 1.2rem;
+}
