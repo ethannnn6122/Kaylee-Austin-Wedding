@@ -10,6 +10,7 @@ class HomeContainer extends Component {
             {
                 slideClass: classes.slideOne,
                 subTextClass: classes.subTitle,
+                headingClass: classes.heading,
                 heading: "Kaylee & Austin",
                 linkPath: "/rsvp",
                 btnClass: classes.btn,
@@ -20,6 +21,7 @@ class HomeContainer extends Component {
             {
                 slideClass: classes.slideTwo,
                 subTextClass: classes.subTitle,
+                headingClass: classes.heading,
                 heading: "Kaylee & Austin",
                 linkPath: "/rsvp",
                 btnClass: classes.btn,
@@ -30,6 +32,7 @@ class HomeContainer extends Component {
             {
                 slideClass: classes.slideThree,
                 subTextClass: classes.subTitle,
+                headingClass: classes.heading,
                 heading: "Kaylee & Austin",
                 linkPath: "/rsvp",
                 btnClass: classes.btn,
@@ -40,6 +43,7 @@ class HomeContainer extends Component {
             {
                 slideClass: classes.slideFour,
                 subTextClass: classes.subTitle,
+                headingClass: classes.heading,
                 heading: "Kaylee & Austin",
                 linkPath: "/rsvp",
                 btnClass: classes.btn,
@@ -55,12 +59,14 @@ class HomeContainer extends Component {
             <>
                 <Carousel autoplay effect='fade'>
                     {this.state.slides.map((item) => (
-                        <div key={item.slideClass} className={item.slideClass}>
-                        <h1>{item.heading}</h1>
-                        <p className={item.subTextClass}>On Saturday, November 12th 2022, join us in a celebration</p>
-                        <Link to={item.linkPath}>
-                            <Button className={item.btnClass} size={item.btnClass} type={item.btnType}>{item.btnText}</Button>
-                        </Link>
+                    <div key={item.slideClass} className={item.slideClass}>
+                        <h1 className={item.headingClass}>{item.heading}</h1>
+                        <div>
+                            <Link to={item.linkPath}>
+                                <Button className={item.btnClass} size={item.btnClass} type={item.btnType}>{item.btnText}</Button>
+                            </Link>
+                            <p className={item.subTextClass}>On Saturday, November 12th 2022, join us in a celebration</p>
+                        </div>
                     </div>
                     ))}
                 </Carousel>

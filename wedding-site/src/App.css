@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,6 +43,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .ant-btn-ghost:hover {
   border-color: #DECB85 !important;
+}
+
+.ant-form {
+  padding: 0 2rem !important;
+  margin: auto;
+  width: 80%;
 }
 
 .ant-statistic-content-value {

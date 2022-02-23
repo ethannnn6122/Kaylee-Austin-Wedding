@@ -5,9 +5,10 @@
     font-size: 3rem;
     font-family: 'Mea Culpa', cursive; 
     color: #000054;
-    background-image: url("https://picsum.photos/id/202/2000/3000");
+    background-image: url("../images/slideOne.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 }
 
 .slideTwo {
@@ -17,9 +18,10 @@
     font-size: 3rem;
     font-family: 'Mea Culpa', cursive; 
     color: #000054;
-    background-image: url("https://picsum.photos/id/100/2000/3000");
+    background-image: url("../images/SlideTwo.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 }
 
 .slideThree {
@@ -29,9 +31,10 @@
     font-size: 3rem;
     font-family: 'Mea Culpa', cursive; 
     color: #000054;
-    background-image: url("https://picsum.photos/id/104/2000/3000");
+    background-image: url("../images/SlideThree.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 }
 
 .slideFour {
@@ -41,20 +44,29 @@
     font-size: 3rem;
     font-family: 'Mea Culpa', cursive;
     color: #000054;
-    background-image: url("https://picsum.photos/id/102/2000/3000");
+    background-image: url("../images/SlideFour.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+}
+
+.heading {
+    font-size: 7rem;
+    margin-top: 15%;
+    text-shadow: 2px 2px 4px #DECB85;
 }
 
 .btn {
     color: #000054;
     font-size: 2rem;
     font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 4px #DECB85;
 }
 
 .subTitle {
     color: #000054;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px #DECB85;
 }
 
 .btn:hover {
