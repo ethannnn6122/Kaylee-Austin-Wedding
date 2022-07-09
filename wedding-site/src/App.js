@@ -3,14 +3,14 @@ import './App.css';
 
 //components
 import LayoutNav from './components/LayoutNav';
-import DonateModal from './components/DonateBtn';
+// import DonateBtn from './components/DonateBtn';
 
 class App extends Component {
   render() {
     return (
       <>
         <LayoutNav />
-        <DonateModal />
+        {/* <DonateBtn /> */}
       </>
       );
   }

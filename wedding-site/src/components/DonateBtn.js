@@ -5,7 +5,7 @@ import classes from './DonateBtn.module.css';
 import { HeartFilled } from '@ant-design/icons';
 
 //components
-import DonateModal from './DonateModal';
+import DonateModal from './ModalCustom';
 
 const DonateBtn = (props) => {
 

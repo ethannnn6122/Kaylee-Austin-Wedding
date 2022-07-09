@@ -5,7 +5,7 @@
     font-size: 3rem;
     font-family: 'Mea Culpa', cursive; 
     color: #000054;
-    background-image: url("../images/slideOne.png");
+    background-image: url("../images/SlideOne.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -76,7 +76,23 @@
 
 @media only screen and (max-width: 580px) {
     .slideOne, .slideTwo, .slideThree, .slideFour {
+        line-height: normal;
+    }
+
+    .heading {
+        font-size: 3.5rem;
+        padding-bottom: 25rem;
+    }
+
+    .subTitle {
         font-size: 2rem;
+        overflow-wrap: break-word;
     }
    
   }
+
+@media screen and (max-height: 820px) {
+    .slideOne, .slideTwo, .slideThree, .slideFour {
+        line-height: 5.5rem;
+    }
+}

@@ -15,6 +15,8 @@ import FooterComp from './Footer';
 // Containers
 import HomeContainer from '../containers/HomeContainer';
 import RsvpContainer from '../containers/RsvpContainer';
+import GiftRegistry from '../containers/GiftRegistry';
+import DetailsContainer from '../containers/DetailsContainer';
 
 const { Header } = Layout;
 
@@ -52,9 +54,8 @@ class LayoutNav extends Component {
 						<Routes>
 							<Route path="/" element={<HomeContainer />}/>
 							<Route path="/rsvp" element={<RsvpContainer />}/>
-							<Route path="/registry" element={null}/>
-							<Route path="/projects" element={null}/>
-							<Route path="/details" element={null}/>
+							<Route path="/registry" element={<GiftRegistry />}/>
+							<Route path="/details" element={<DetailsContainer />}/>
 						</Routes>
 						<FooterComp />
 					</Layout>

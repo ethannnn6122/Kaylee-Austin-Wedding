@@ -1,0 +1,19 @@
+.bannerImg {
+    height: 35vh;
+    background-image: url("../images/KivaClub.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 4rem;
+    color: #000054;
+    text-shadow: 2px 2px 4px #DECB85;
+}
+
+.cardWrapper {
+    margin: 1rem;
+    box-shadow: 3px 3px 8px #000054;
+}
+
+.cards {
+    height: 60vh;
+}
