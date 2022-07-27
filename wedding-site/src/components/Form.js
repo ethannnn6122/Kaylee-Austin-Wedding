@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Space, Select, Radio, Modal } from 'antd';
+import { Form, Input, Button, Space, Select, Radio } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import classes from './Form.module.css';
+import {useNavigate} from 'react-router-dom';
+
+import ModalCustom from './ModalCustom';
 
 const RSVPForm = () => {
     const [form] = Form.useForm();
@@ -15,38 +18,69 @@ const RSVPForm = () => {
     const [attendField, setField] = useState(false);
     const [submitVis, setSubmitVis] = useState(true);
 
+    // Modal State
+    const [modalVis, setModalVis] = useState(false);
+    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [modalText, setModalText] = useState('Thank You!');
+
+    // Error State
+    const [error, setError] = useState(null);
+
+    const navigate = useNavigate();
+    
+    const toggleModal = () => {
+        setModalVis(!modalVis);
+    }
+
+    const handleOk = () => {
+        setModalText('You will now be redirected to the home page.');
+        setConfirmLoading(true);
+        setTimeout(() => {
+            navigate("/", {replace: true})
+            setModalVis(false);
+            setConfirmLoading(false);
+        }, 2000);
+      };
+    
+    const handleCancel = () => {
+        console.log('Clicked cancel button');
+        setModalVis(false);
+    };
+
     const onSubmit = (data) => {
         try {
-            console.log("Success:", data);
-            console.log('Value State:', values);
-            axios.post('https://sheet.best/api/sheets/f98f8690-4a41-406d-a8c2-4a2e5010f64c', values)
-            .then(response => {
-                console.log(response.data);
-                let countDown = 10;
-                const modal = Modal.success({
-                    title: 'RSVP Recieved',
-                    content: 'Thank You!'
-                });
-                const timer = setInterval(() => {
-                    countDown -= 1;
-                }, 1000);
-                setTimeout(() => {
-                    clearInterval(timer);
-                    modal.destroy();
-                }, countDown * 1000);
-            })    
+            if (error === false) {
+                console.log("Success:", data);
+                console.log('Value State:', values);
+                axios.post('https://sheet.best/api/sheets/f98f8690-4a41-406d-a8c2-4a2e5010f64c', values)
+                .then(response => {
+                    console.log(response.data);
+                    toggleModal();
+                })   
+            } 
         } catch (errorInfo) {
             console.log('Failed:', errorInfo);
         }
     };
 
+    const isEmailValid = (email) => {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
     const valueChange = (e) => {
+        console.log(isEmailValid(e.target.value));
         e.preventDefault();
         const value = e.target.value;
         setValues({
             ...values,
             [e.target.name]: value,
         });
+        if (!isEmailValid(e.target.value)) {
+            setError(true);
+        } else {
+            setError(false);
+        }
+
     }
 
     const fields = 
@@ -79,7 +113,7 @@ const RSVPForm = () => {
                             {...restField}
                             label="Preferred Meal"
                             name={[name, 'meal']}
-                            rules={[{required: vis, message: 'Missing Meal Selection'}]}
+                            rules={[{required: true, message: 'Missing Meal Selection'}]}
                         >
                             <Radio.Group
                                 name={[name, 'meal']}
@@ -99,26 +133,6 @@ const RSVPForm = () => {
                                 name={[name, 'allergies']}>
                             <Input.TextArea disabled={attendField} onChange={valueChange} name={[name, 'allergies']} value={values.allergies} placeholder='List any allergies here'/>
                         </Form.Item>
-                        {/* OLD MEAL SELECTION */}
-                        {/* <Form.Item
-                            // {...outerLayout}
-                            {...restField}
-                            label="Preferred Meal"
-                            name={[name, 'meal']}
-                            rules={[{ required: vis, message: 'Missing meal selection' }]}
-                        >
-                            <Select
-                                disabled={attendField}
-                                value={values.meal}
-                                onChange={mealChange}
-                                placeholder="Select your meal"
-                                allowClear
-                            >
-                                <Select.Option name={[name, 'meal']} value="chicken" >Chicken</Select.Option>
-                                <Select.Option name={[name, 'meal']} value="steak">Steak</Select.Option>
-                                <Select.Option name={[name, 'meal']} value="vegetarian">Vegetarian</Select.Option>
-                            </Select>
-                        </Form.Item> */}
                     </Space>   
                     ))}
                     <Form.Item>
@@ -176,12 +190,23 @@ const RSVPForm = () => {
                 <Select.Option value="no">No</Select.Option>
             </Select>
         </Form.Item>
-        {fields}
+        <Form.Item
+            label="Contact Email"
+            name="email"
+            rules={[{ required: true}]}>
+            <Input onChange={valueChange} name={"contactEmail"} value={values.contactEmail} placeholder='Type a contact Email address for your RSVP.'/>
+        </Form.Item>
+            {error && <h3 style={{color: 'red'}}>{"Invalid Email"}</h3>}
+            {fields}
         <Form.Item>
             <Button disabled={submitVis} type="primary" htmlType="submit">
                 Submit
             </Button>
-        </Form.Item>
+            <ModalCustom isOpen={modalVis} toggle={toggleModal}
+                         confirmLoading={confirmLoading} modalText={modalText}
+                         handleOk={handleOk} handleCancel={handleCancel}
+            />
+        </Form.Item>       
     </Form>
     );
 };

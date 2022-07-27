@@ -1,0 +1,39 @@
+.formImg {
+    background-image: url("../images/BallroomImg.jpg");
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 3rem;
+    min-width: 10rem;
+    color: #000054;
+    margin-bottom: 0.5rem;
+}
+
+.cardWrapper {
+    margin: auto;
+    width: 50%;
+    border: 0.25rem solid #000054;
+    border-radius: 2rem;
+}
+
+.subText {
+    font-size: 1.2rem;
+    color: #DECB85;
+    margin: 1rem;
+    text-align: center;
+}
+
+.btnClass {
+    color: #000054;
+    font-size: 2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 4px #DECB85;
+    padding-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.btnClass:hover {
+    color: #000054;
+    background-color: transparent;
+}

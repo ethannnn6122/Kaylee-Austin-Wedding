@@ -17,3 +17,9 @@
 .cards {
     height: 60vh;
 }
+
+@media only screen and (max-width: 1400px) {
+    .bannerImg {
+        font-size: 3rem;
+    }
+}

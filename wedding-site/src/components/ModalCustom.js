@@ -1,47 +1,20 @@
-import React from 'react';
 import { Modal } from 'antd';
+import React from 'react';
 
-const ModalCustom = () => {
-	// const [visible, setVisible] = React.useState(false);
-    // const [confirmLoading, setConfirmLoading] = React.useState(false);
-    // const [modalText, setModalText] = React.useState();
-    // const showModal = () => {
-    // 	setVisible(true);
-	// 	console.log("modal open");
-    // };
-
-    // const handleOk = () => {
-	// 	setModalText('Thank you!');
-	// 	setConfirmLoading(true);
-	// 	setTimeout(() => {
-	// 		setVisible(false);
-	// 		setConfirmLoading(false);
-	// 	}, 2000);
-    // };
-
-    // const handleCancel = () => {
-	// 	console.log('Clicked cancel button');
-	// 	setVisible(false);
-    // };
-
-	const onClick = () => {
-		let countDown = 5;
-		const modal = Modal.success({
-			title: 'RSVP Recieved',
-			content: 'Thank You!'
-		});
-		const timer = setInterval(() => {
-			countDown -= 1;
-		}, 1000);
-		setTimeout(() => {
-			clearInterval(timer);
-			modal.destroy();
-		}, countDown * 1000);
-	}
+const ModalCustom = (props) => {
 
     return (
 		<>
-			
+			<Modal
+				onClick={props.toggle}
+				title="RSVP Confirmation"
+				visible={props.isOpen}
+				onOk={props.handleOk}
+				confirmLoading={props.confirmLoading}
+				onCancel={props.toggle}
+			>
+				<p>{props.modalText}</p>
+			</Modal>
 		</>
 	);
 };
