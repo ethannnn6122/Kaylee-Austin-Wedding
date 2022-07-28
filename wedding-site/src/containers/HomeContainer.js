@@ -65,7 +65,7 @@ class HomeContainer extends Component {
                                 <Link to={item.linkPath}>
                                     <Button className={item.btnClass} size={item.btnClass} type={item.btnType}>{item.btnText}</Button>
                                 </Link>
-                                <p className={item.subTextClass}>On Saturday, November 12th 2022, join us in a celebration</p>
+                                <p className={item.subTextClass}>November 12th, 2022</p>
                             </div>
                         </div>
                     ))}

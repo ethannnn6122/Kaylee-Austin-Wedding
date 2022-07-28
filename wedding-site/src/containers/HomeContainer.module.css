@@ -52,7 +52,7 @@
 
 .heading {
     font-size: 7rem;
-    margin-top: 15%;
+    margin-top: 1.5rem;
     /* text-shadow: 2px 2px 4px #DECB85; */
 }
 
@@ -61,7 +61,7 @@
     font-size: 2rem;
     font-family: 'Josefin Sans', sans-serif;
     text-shadow: 2px 2px 4px #DECB85;
-    margin-top: 3em;
+    margin-top: 20rem;
 }
 
 .subTitle {
@@ -75,6 +75,12 @@
 .btn:hover {
     color: #DECB85;
     background-color: transparent;
+}
+
+@media screen and (max-width: 1160px) {
+    .subTitle {
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (max-width: 580px) {

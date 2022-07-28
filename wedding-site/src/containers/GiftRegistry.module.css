@@ -1,0 +1,17 @@
+.amznRegistry {
+    background-image: url("../images/amznRegistryImg.png");
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.targtRegistry {
+    background-image: url("../images/trgetRegistry.png");
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}

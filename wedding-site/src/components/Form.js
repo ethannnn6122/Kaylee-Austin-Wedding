@@ -179,7 +179,7 @@ const RSVPForm = () => {
     }
       
   return (
-    <Form form={form} name="dynamic_rule" layout='vertical' onFinish={onSubmit}>
+    <Form className={classes.formWrapper} form={form} name="dynamic_rule" layout='vertical' onFinish={onSubmit}>
         <Form.Item
             label="Attending?"
             name="attendance"
