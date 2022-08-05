@@ -53,7 +53,6 @@
 .heading {
     font-size: 7rem;
     margin-top: 1.5rem;
-    /* text-shadow: 2px 2px 4px #DECB85; */
 }
 
 .btn {
@@ -93,12 +92,7 @@
     }
 
     .heading {
-        font-size: 3.5rem;
-        padding-bottom: 25rem;
-    }
-
-    .subTitle {
-        display: none;
+        font-size: 4rem;
     }
    
   }

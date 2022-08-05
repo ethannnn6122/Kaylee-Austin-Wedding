@@ -17,6 +17,7 @@ const RSVPForm = () => {
     const [vis, setVis] = useState(true);
     const [attendField, setField] = useState(false);
     const [submitVis, setSubmitVis] = useState(true);
+    const [req, setReq] = useState(true);
 
     // Modal State
     const [modalVis, setModalVis] = useState(false);
@@ -24,7 +25,7 @@ const RSVPForm = () => {
     const [modalText, setModalText] = useState('Thank You!');
 
     // Error State
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
 
     const navigate = useNavigate();
     
@@ -52,7 +53,7 @@ const RSVPForm = () => {
             if (error === false) {
                 console.log("Success:", data);
                 console.log('Value State:', values);
-                axios.post('https://sheet.best/api/sheets/f98f8690-4a41-406d-a8c2-4a2e5010f64c', values)
+                axios.post('https://sheet.best/api/sheets/d95b68c6-1f76-425a-9b46-39b5c15a1583', values)
                 .then(response => {
                     console.log(response.data);
                     toggleModal();
@@ -67,7 +68,7 @@ const RSVPForm = () => {
         return /\S+@\S+\.\S+/.test(email);
     }
 
-    const valueChange = (e) => {
+    const emailChange = (e) => {
         console.log(isEmailValid(e.target.value));
         e.preventDefault();
         const value = e.target.value;
@@ -80,7 +81,25 @@ const RSVPForm = () => {
         } else {
             setError(false);
         }
+        isRequired();
+    }
 
+    const valueChange = (e) => {
+        e.preventDefault();
+        const value = e.target.value;
+        setValues({
+            ...values,
+            [e.target.name]: value,
+        });
+        isRequired();
+    }
+
+    const isRequired = () => {
+        if (attendField === false) {
+           return setReq(true);
+        } else {
+           return setReq(false);
+        }
     }
 
     const fields = 
@@ -113,7 +132,7 @@ const RSVPForm = () => {
                             {...restField}
                             label="Preferred Meal"
                             name={[name, 'meal']}
-                            rules={[{required: true, message: 'Missing Meal Selection'}]}
+                            rules={[{required: req, message: 'Missing Meal Selection'}]}
                         >
                             <Radio.Group
                                 name={[name, 'meal']}
@@ -194,7 +213,7 @@ const RSVPForm = () => {
             label="Contact Email"
             name="email"
             rules={[{ required: true}]}>
-            <Input onChange={valueChange} name={"contactEmail"} value={values.contactEmail} placeholder='Type a contact Email address for your RSVP.'/>
+            <Input onChange={emailChange} name={"contactEmail"} value={values.contactEmail} placeholder='Type a contact Email address for your RSVP.'/>
         </Form.Item>
             {error && <h3 style={{color: 'red'}}>{"Invalid Email"}</h3>}
             {fields}

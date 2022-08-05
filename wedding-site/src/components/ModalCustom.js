@@ -1,4 +1,4 @@
-import { Modal } from 'antd';
+import { Modal, Button } from 'antd';
 import React from 'react';
 
 const ModalCustom = (props) => {
@@ -12,6 +12,11 @@ const ModalCustom = (props) => {
 				onOk={props.handleOk}
 				confirmLoading={props.confirmLoading}
 				onCancel={props.toggle}
+				footer={[
+					<Button key="back" onClick={props.handleOk}>
+					  Return Home
+					</Button>
+				  ]}
 			>
 				<p>{props.modalText}</p>
 			</Modal>

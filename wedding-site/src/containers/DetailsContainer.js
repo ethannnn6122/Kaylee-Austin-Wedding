@@ -9,7 +9,7 @@ const mealData = {
     chicken: ['Spinach stuffed chicken breast', 'Candied tomatoes', 'Prosciutto', 'Caramelized onion and Boursin cheese sauce'],
     steak: ['6 oz. Filet', 'Prepared medium', 'Cabernet Demi-Glaze'],
     vegetarian: ['Mushroom Ravioli', 'Alfredo sauce, Roasted tomatoes', 'Fresh herbs and Truffle oil'],
-    sides: ['Roasted Garlic-herb Fingering Potatoes', 'Grilled Asparagus']
+    sides: ['Roasted Garlic-herb Fingerling Potatoes', 'Grilled Asparagus']
     
 }
 
