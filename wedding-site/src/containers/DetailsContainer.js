@@ -17,7 +17,10 @@ class DetailsContainer extends Component {
     render() {
         return (
             <div>
-                <div className={classes.bannerImg}>Wedding Details</div>
+                <div className={classes.bannerImg}>
+                    Wedding Details
+                    <p className={classes.dateTime}>November 12 at 4:00pm</p>
+                </div>
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col span={24}>
                         <Card title="Meal Options" bordered={false}>
